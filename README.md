@@ -31,7 +31,7 @@ imba-backup.ps1 -Restore -BackupDir <Path> -TargetDir <Path> [-Snapshotnumber <0
 3) Get information about all snapshots in the backup chain:
 ```
 imba-backup.ps1 -GetBackupStatus -BackupDir <Path>
-                [-WriteToEventLog]`
+                [-WriteToEventLog]
 ```
 4) Get the full Dirinfo file for the selected or last snapshot:
 ```
