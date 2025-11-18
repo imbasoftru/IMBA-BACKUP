@@ -20,12 +20,16 @@ As a result, a snapshot of C:\DATA at the current time will be made in the C:\BA
 ### Additional options:
 *ExcludePaths* – a comma-separated string containing a list of path masks to exclude from backup. Examples:
 1)	*.bak – all files and directories ending in .bak
-2)	C:\DATA\Report*, *Invoices\*  – all files and directories starting with C:\DATA\Report or containing the subdirectory Invoices\ in their name.
+2)	C:\DATA\Report*, \*Invoices\\*  – all files and directories starting with C:\DATA\Report or containing the subdirectory Invoices\ in their name.
 
 *ExcludePathsFile* – similar to ExcludePaths, except that masks are specified in a text file rather than in the command line. Each mask is written on a separate line of the file. For example, to specify the masks above, three lines must be written to the file:
+
 *.bak
+
 C:\DATA\Report*
-*Invoices\*
+
+\*Invoices\\*
+
 
 *UseVolumeShadowCopy* – access to backed up data will be performed using the Volume Shadow Copy mechanism. This option is relevant for backing up directories that are actively used by the user. Use of this option requires administrator rights.
 
@@ -35,7 +39,7 @@ C:\DATA\Report*
 
 >Advice
 >
->imba-backup is designed to run on a schedule from the Windows Task Scheduler. It is recommended to use the UseVolumeShadowCopy and >WriteToEventLog options.
+>imba-backup is designed to run on a schedule from the Windows Task Scheduler. It is recommended to use the UseVolumeShadowCopy and WriteToEventLog options.
 
 # Restoring a backup
 To restore data from the latest backup stored in the C:\BACKUP\ directory to the C:\RESTORE directory, run the following command:
