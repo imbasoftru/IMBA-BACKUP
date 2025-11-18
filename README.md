@@ -1,5 +1,5 @@
 # IMBA-BACKUP
-It is a free and open source system that provides incremental backups on Windows.
+[It is](imba-backup.ps1) a free and open source system that provides incremental backups on Windows.
 
 ## Key features:
 1) Incremental backup. Only changes between the current data and the previous backup are saved.
