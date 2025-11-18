@@ -6,7 +6,7 @@ In imba-backup, the backup directory consists of snapshot subdirectories named 0
 
 **The structure of the snapshot directory:**
 1) *A\\*  – a subdirectory containing files and directories that need to be added to the previous snapshot in order to restore the reserved data.
-2) *AddList.json* – a DirInfo-file containing a description of the files stored in the A\ subdirectory. SHA256 is used to calculate checksums.
+2) *AddList.json* – a DirInfo file containing a description of the files stored in the A\ subdirectory. SHA256 is used to calculate checksums.
 3) *RemoveList.json* – a file containing a list of files and directories that need to be removed from the previous snapshot in order to restore the reserved data.
 4) *SnapshotInfo.json* – a file with metadata for the current snapshot. It includes the snapshot creation date, snapshot type, and other information. This file is a mandatory element of the snapshot, while other files or directories may not be present (for example, if there have been no changes to the data since the last backup).
 
@@ -52,8 +52,8 @@ To find out information about the backup copy C:\BACKUP\, including the number o
 
 `imba-backup.ps1 -GetBackupStatus -BackupDir C:\BACKUP\`
 
-# Obtaining a full DirInfo-file for backup
-The DirInfo-file contains descriptions of the files stored in the backup and their checksums. Each snapshot stores an AddList.json DirInfo-file for the files stored in that snapshot. However, to obtain a full DirInfo-file consisting of the DirInfo-files for each snapshot, you need to run a special command. For example, to save the full DirInfo-file for the backup stored in the C:\BACKUP\ directory to the FullDirInfo.json file, you need to use the following command:
+# Obtaining a full DirInfo file for backup
+The DirInfo file contains descriptions of the files stored in the backup and their checksums. Each snapshot stores an AddList.json DirInfo file for the files stored in that snapshot. However, to obtain a full DirInfo file consisting of the DirInfo files for each snapshot, you need to run a special command. For example, to save the full DirInfo file for the backup stored in the C:\BACKUP\ directory to the FullDirInfo.json file, you need to use the following command:
 
 `imba-backup.ps1 -GetFullDirInfo -BackupDir C:\BACKUP\ -DirInfoFile FullDirInfo.json`
 
@@ -61,7 +61,7 @@ The DirInfo-file contains descriptions of the files stored in the backup and the
 *Snapshotnumber* – specifies the snapshot number for which a full DirInfo file is required.
 
 # Checking directory integrity using checksums
-We can check the integrity of directory contents using the checksums specified in the full DirInfo-file. For example, checking the integrity of the C:\DATA directory using the complete DirInfo-file looks like this:
+We can check the integrity of directory contents using the checksums specified in the full DirInfo file. For example, checking the integrity of the C:\DATA directory using the complete DirInfo file looks like this:
 
 `imba-backup.ps1 -VerifyHash -SourceDir C:\DATA\ -DirInfoFile FullDirInfo.json`
 
