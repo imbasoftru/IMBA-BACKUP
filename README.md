@@ -1,2 +1,14 @@
-# imba-backup
-Incrimental backup
+# IMBA-BACKUP
+It is a free and open source system that provides incremental backups on Windows.
+
+## Key features:
+1) Incremental backup. Only changes between the current data and the previous backup are saved.
+2) Versioning of files and directories.
+3) Ability to restore data from any snapshot.
+4) No image files are used. The backup consists of files in their original form. It is always possible to open a file in the backup in the standard way or restore data by simply copying files from folder to folder. No strict dependence on the backup system itself.
+5) The integrity of backups is protected using SHA256 hashes.
+6) Ability to compare arbitrary directories by content.
+7) Support for logging in Windows Event Log.
+8) Support for Volume Shadow Copy technology for accessing actively used data.
+9) The system is developed on PowerShell and supports Windows 11 without the need to install any external applications or modules.
+10) The system is free and comes with open source code under the MIT license.
